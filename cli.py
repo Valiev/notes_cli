@@ -8,10 +8,11 @@ import requests
 
 urljoin = path.join
 
-ACTION_ADD  = "add"
-ACTION_REG  = "register"
-ACTION_LS   = "ls"
-ACTION_EDIT = "edit"
+ACTION_ADD      = "add"
+ACTION_REG      = "register"
+ACTION_LS       = "ls"
+ACTION_EDIT     = "edit"
+ACITON_SEARCH   = "search"
 ACTIONS = [
     ACITON_ADD,
     ACTION_REG,
@@ -19,15 +20,16 @@ ACTIONS = [
     ACTION_EDIT,
 ]
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 USAGE = """\
 This is clone of todo.txt command line wrapper, but way better
 
 Usage:
-    %(FILE)s %(ADD)s <note> [options]
-    %(FILE)s %(LS)s <tag> [options]
-    %(FILE)s %(EDIT)s <id> [options]
     %(FILE)s %(REG)s [options]
+    %(FILE)s %(ADD)s <note> [options]
+    %(FILE)s %(LS)s [options]
+    %(FILE)s %(SEARCH)s [options]
+    %(FILE)s %(EDIT)s <id> [options]
 
 Options:
     -h  --help      Show this screen.
@@ -41,6 +43,7 @@ Options:
     LS      = ACTION_LS,
     EDIT    = ACTION_EDIT,
     REG     = ACTION_REG,
+    SEARCH  = ACTION_SEARCH,
 )
 
 class ConfigError(Exception):
@@ -107,6 +110,7 @@ class ActionManager(object):
             ACTION_ADD: self.add,
             ACTION_LS: self.ls,
             ACTION_EDIT: self.edit,
+            ACTION_SEARCH: self.search,
         }
 
         action = self.get_action()
@@ -127,6 +131,9 @@ class ActionManager(object):
         pass
 
     def ls(self):
+        pass
+
+    def search(self):
         pass
 
     def register(self):
