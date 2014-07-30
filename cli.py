@@ -109,14 +109,17 @@ class ActionManager(object):
 
     def manage(self):
         action_map = {
-            ACTION_REG:  self.register,
-            ACTION_ADD: self.add,
-            ACTION_LS: self.ls,
-            ACTION_EDIT: self.edit,
-            ACTION_SEARCH: self.search,
+            ACTION_REG:     self.register,
+            ACTION_ADD:     self.add,
+            ACTION_LS:      self.ls,
+            ACTION_EDIT:    self.edit,
+            ACTION_SEARCH:  self.search,
         }
 
         action = self.get_action()
+        if action != ACTION_REG:
+            self.config.load()
+
         action_method = action_map[action]
 
         try:
@@ -129,14 +132,24 @@ class ActionManager(object):
 
     def add(self):
         url = urljoin(self.config.server, 'add')
-        params = {"AUTH-TOKEN": self.config.token}
-        requests.put(url, params = params)
+        headers = {"Auth-token": self.config.token}
+        note = self.args['<note>']
+        req = requests.put(url, headers = headers, data={"note": note})
+        # TODO: check status
+
 
     def edit(self):
         pass
 
     def ls(self):
-        pass
+        url = urljoin(self.config.server, 'list')
+        headers = {"Auth-token": self.config.token}
+        req = requests.get(url, headers = headers)
+        # TODO: check status
+        answers = json.loads(req.text)
+        for answer_dict in answers:
+            text = answer_dict['text']
+            print text
 
     def search(self):
         pass
