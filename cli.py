@@ -127,7 +127,9 @@ class ActionManager(object):
         return 0
 
     def add(self):
-        pass
+        url = urljoin(self.config.server, 'add')
+        params = {"AUTH-TOKEN": self.config.token}
+        requests.put(url, params = params)
 
     def edit(self):
         pass
