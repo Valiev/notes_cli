@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+VERSION = '0.3.0'
+
 import ConfigParser as configparser
 from docopt import docopt
 import json
@@ -22,7 +24,6 @@ ACTIONS = [
     ACTION_SEARCH,
 ]
 
-VERSION = '0.2.1'
 USAGE = """\
 This is clone of todo.txt command line wrapper, but way better
 
