@@ -5,6 +5,7 @@ from docopt import docopt
 import json
 import os.path as path
 import requests
+import sys
 
 urljoin = path.join
 
@@ -12,12 +13,13 @@ ACTION_ADD      = "add"
 ACTION_REG      = "register"
 ACTION_LS       = "ls"
 ACTION_EDIT     = "edit"
-ACITON_SEARCH   = "search"
+ACTION_SEARCH   = "search"
 ACTIONS = [
     ACTION_ADD,
     ACTION_REG,
     ACTION_LS,
     ACTION_EDIT,
+    ACTION_SEARCH,
 ]
 
 VERSION = '0.2.1'
