@@ -14,7 +14,7 @@ ACTION_LS       = "ls"
 ACTION_EDIT     = "edit"
 ACITON_SEARCH   = "search"
 ACTIONS = [
-    ACITON_ADD,
+    ACTION_ADD,
     ACTION_REG,
     ACTION_LS,
     ACTION_EDIT,
@@ -39,7 +39,7 @@ Options:
     --token TOKEN   Existing token
 """ % dict(
     FILE    = __file__,
-    ADD     = ACITON_ADD,
+    ADD     = ACTION_ADD,
     LS      = ACTION_LS,
     EDIT    = ACTION_EDIT,
     REG     = ACTION_REG,
