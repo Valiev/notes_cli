@@ -20,7 +20,7 @@ ACTIONS = [
     ACTION_EDIT,
 ]
 
-VERSION = '0.2.0'
+VERSION = '0.2.1'
 USAGE = """\
 This is clone of todo.txt command line wrapper, but way better
 

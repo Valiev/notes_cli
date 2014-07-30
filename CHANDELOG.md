@@ -1,3 +1,6 @@
+## 0.2.1
+* typo fix in action name
+
 ## 0.2.0
 * added 'search' prototype
 
