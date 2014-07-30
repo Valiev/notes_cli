@@ -1,3 +1,7 @@
+## 0.4.0
+* Working `add` and `ls` implementation
+* `requirments.txt` added
+
 ## 0.3.0
 * `add` method implementation
 
